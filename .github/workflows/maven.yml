@@ -160,7 +160,7 @@ jobs:
       - name: Collect Java files
         if: always()
         run: |
-          find . -name "*.java" -not -name "*Tester.java" -type f > java_files.txt
+          find . -name "Hotel*.java" -not -name "*Tester.java" -type f > java_files.txt
       # Run AI Review with ChatGPT
       - name: AI Review with ChatGPT
         if: always() && steps.grade.outputs.grade > 0 && steps.reviewdog.outcome == 'success'
