@@ -1,20 +1,29 @@
-import java.util.*;
+
+import java.util.Scanner;
+
+
+
 public class Hotel {
-    public static void main(String [] args){
-        Scanner scan = new Scanner(System.in);
+    public static void main(String [] args) {
         HotelRoom room1 = new HotelRoom(307, 4);
         HotelRoom room2 = new HotelRoom(205, 3);
         room2.checkIn("Test Guest");
         HotelRoom room3 = new HotelRoom(402, 2);
         System.out.println("Hotel rooms:");
         display(room1, room2, room3);
-        System.out.println("\nHotel Menu:\n1 - Display rooms by room number (ascending)\n2 - Check-in to a room\n3 - Check-out from a room\n4 - Find available room by requested beds\nEnter your choice:");
+        System.out.println("\nHotel Menu:");
+        System.out.println("1 - Display rooms by room number (ascending)");
+        System.out.println("2 - Check-in to a room");
+        System.out.println("3 - Check-out from a room");
+        System.out.println("4 - Find available room by requested beds");
+        System.out.println("Enter your choice:");
+        Scanner scan = new Scanner(System.in);
         int selection = scan.nextInt();
         String name;
         int roomNumber;
         scan.nextLine();
         int numBeds;
-        switch(selection) {
+        switch (selection) {
             case 1:
                 displaySorted(room1, room2, room3);
                 break;
@@ -45,6 +54,7 @@ public class Hotel {
                 System.out.println("Error: Invalid menu choice");
         }
     }
+
     // בודק אם החדרים הם null או לא         
     //מדפיס את החדרים         
     public static void display(HotelRoom a, HotelRoom b, HotelRoom c) {
@@ -79,27 +89,27 @@ public class Hotel {
     }
 
     public static HotelRoom findRoomByNumber(int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
-        if(a != null && a.getRoomNum() == roomNum) {
+        if (a != null && a.getRoomNum() == roomNum) {
             return a;
         }
         
-        if(b != null && b.getRoomNum() == roomNum) {
+        if (b != null && b.getRoomNum() == roomNum) {
             return b;
         }
         
-        if(c != null && c.getRoomNum() == roomNum) {
+        if (c != null && c.getRoomNum() == roomNum) {
             return c;
         }
         return null;
         }
     
     public static void checkIn(String guestName, int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
-        if(guestName == null) {
+        if (guestName == null) {
             return;
         }
         
         HotelRoom room = findRoomByNumber(roomNum, a, b, c);    
-        if(room != null && room.checkIn(guestName)) {
+        if (room != null && room.checkIn(guestName)) {
             System.out.println(room);  
         } else {
             System.out.println("Error: Room not available or not found");
@@ -108,7 +118,7 @@ public class Hotel {
         
     public static void checkOut(int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
         HotelRoom room = findRoomByNumber(roomNum, a, b, c);
-        if(room != null){
+        if (room != null) {
             room.checkOut();
             System.out.println(room);
         } else {
@@ -118,7 +128,7 @@ public class Hotel {
       
     public static void findAvailableByBeds(int beds, HotelRoom a, HotelRoom b, HotelRoom c) {
         HotelRoom room = findRoomByBeds(beds, a, b, c);
-        if(room != null){
+        if (room != null) {
             System.out.println(room);
         } else {
             System.out.println("No available room with the requested number of beds");
@@ -126,15 +136,15 @@ public class Hotel {
     }   
     
     public static HotelRoom findRoomByBeds(int numBeds, HotelRoom a, HotelRoom b, HotelRoom c) {
-        if(a != null && a.getNumBeds() == numBeds && !a.isOccupied()) {
+        if (a != null && a.getNumBeds() == numBeds && !a.isOccupied()) {
             return a;
         }
         
-        if(b != null && b.getNumBeds() == numBeds && !b.isOccupied()) {
+        if (b != null && b.getNumBeds() == numBeds && !b.isOccupied()) {
             return b;
         }
         
-        if(c != null && c.getNumBeds() == numBeds && !c.isOccupied()) {
+        if (c != null && c.getNumBeds() == numBeds && !c.isOccupied()) {
             return c;
         }
         return null;

@@ -1,30 +1,31 @@
+
 public class HotelRoom {
+
     private int _roomNum;
     private int _numBeds;
     private boolean _occupied;
     private String _guest;
 
     // קבועים לפי דרישות המטלה
-    private final int DEFAULT_ROOM = 999;
-    private final int DEFAULT_BEDS = 2;
-    private final int MIN_BEDS = 2;
-    private final int MAX_BEDS = 4;
-    private final int MIN_ROOM = 100;
-    private final int MAX_ROOM = 999;
+    private static final int DEFAULT_ROOM = 999;
+    private static final int DEFAULT_BEDS = 2;
+    private static final int MIN_BEDS = 2;
+    private static final int MAX_BEDS = 4;
+    private static final int MIN_ROOM = 100;
+    private static final int MAX_ROOM = 999;
+
+    public HotelRoom() {
+        _roomNum = DEFAULT_ROOM;
+        _numBeds = DEFAULT_BEDS;
+        _occupied = false;
+        _guest = "";
+    }
 
     // בנאי המחלקה
     public HotelRoom(int roomNum, int numBeds) {
-        if (roomNumOk(roomNum)) {
-            _roomNum = roomNum;
-        } else {
-            _roomNum = DEFAULT_ROOM;
-        }
-
-        if (numBedsOk(numBeds)) {
-            _numBeds = numBeds;
-        } else {
-            _numBeds = DEFAULT_BEDS;
-        }
+        this();
+        setRoomNum(roomNum);
+        setNumBeds(numBeds);
 
         _occupied = false;
         _guest = "";
@@ -32,19 +33,19 @@ public class HotelRoom {
 
     // שיטות אחזור (Getters)
     public int getRoomNum() {
-        return _roomNum; 
+        return _roomNum;
     }
-    
+
     public int getNumBeds() {
-        return _numBeds; 
+        return _numBeds;
     }
-    
+
     public boolean isOccupied() {
-        return _occupied; 
+        return _occupied;
     }
-    
+
     public String getGuest() {
-        return _guest; 
+        return _guest;
     }
 
     // שיטות קובעות (Setters)
@@ -79,7 +80,7 @@ public class HotelRoom {
         if (other == null) {
             return false;
         }
-        
+
         return _roomNum == other._roomNum && _numBeds == other._numBeds;
     }
 
@@ -87,7 +88,7 @@ public class HotelRoom {
         if (other == null) {
             return false;
         }
-        
+
         return _roomNum < other._roomNum;
     }
 
@@ -95,7 +96,7 @@ public class HotelRoom {
         if (other == null) {
             return false;
         }
-        
+
         return other.before(this);
     }
 
@@ -112,8 +113,8 @@ public class HotelRoom {
         _occupied = false;
         _guest = "";
     }
-    
-    public boolean roomNumEquals(int other){
+
+    public boolean roomNumEquals(int other) {
         return _roomNum == other;
     }
 }
