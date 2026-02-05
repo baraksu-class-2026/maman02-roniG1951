@@ -1,12 +1,9 @@
 ## Grade
 
-[![Grade](https://img.shields.io/badge/Grade-90%25-brightgreen)](https://github.com/baraksu-class-2026/maman02-roniG1951/actions/runs/21728386799) *(Original: 100%, Penalties: -10)*
+[![Grade](https://img.shields.io/badge/Grade-100%25-brightgreen)](https://github.com/baraksu-class-2026/maman02-roniG1951/actions/runs/21728659116)
 
 ## AI Code Review
 
-❌ Duplicate Code (-10 points)
-Methods with duplication: findRoomByNumber and findRoomByBeds
-```java
-private static HotelRoom findRoomMatch(int roomNum,int numBeds,boolean byRoomNum,HotelRoom a,HotelRoom b,HotelRoom c){ if(a!=null){ if(byRoomNum ? a.getRoomNum()==roomNum : a.getNumBeds()==numBeds && !a.isOccupied()) return a;} if(b!=null){ if(byRoomNum ? b.getRoomNum()==roomNum : b.getNumBeds()==numBeds && !b.isOccupied()) return b;} if(c!=null){ if(byRoomNum ? c.getRoomNum()==roomNum : c.getNumBeds()==numBeds && !c.isOccupied()) return c;} return null; }
-```
-Recommended adjusted grade: 90%
+✅ Code Quality: Excellent!
+יישר כוח — עבודה טובה וברוכה.
+No changes required.
