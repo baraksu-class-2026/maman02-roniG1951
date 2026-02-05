@@ -94,7 +94,6 @@ public class Hotel {
         }
     
     public static void checkIn(String guestName, int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
-        nullVerify(a, b, c);
         if(guestName == null) {
             return;
         }
@@ -108,7 +107,6 @@ public class Hotel {
     }
         
     public static void checkOut(int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
-        nullVerify(a, b, c);
         HotelRoom room = findRoomByNumber(roomNum, a, b, c);
         if(room != null){
             room.checkOut();
@@ -119,7 +117,6 @@ public class Hotel {
     }
       
     public static void findAvailableByBeds(int beds, HotelRoom a, HotelRoom b, HotelRoom c) {
-        nullVerify(a, b, c);
         HotelRoom room = findRoomByBeds(beds, a, b, c);
         if(room != null){
             System.out.println(room);
@@ -129,7 +126,6 @@ public class Hotel {
     }   
     
     public static HotelRoom findRoomByBeds(int numBeds, HotelRoom a, HotelRoom b, HotelRoom c) {
-        nullVerify(a, b, c);
         if(a != null && a.getNumBeds() == numBeds && !a.isOccupied()) {
             return a;
         }
