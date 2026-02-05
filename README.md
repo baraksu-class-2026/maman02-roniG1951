@@ -1,10 +1,14 @@
 ## Grade
 
-[![Grade](https://img.shields.io/badge/Grade-0%25-red)](https://github.com/baraksu-class-2026/maman02-roniG1951/actions/runs/21646039885)
+[![Grade](https://img.shields.io/badge/Grade-0%25-red)](https://github.com/baraksu-class-2026/maman02-roniG1951/actions/runs/21727920539)
+
+## Coding Standards
+
+❌ **Coding Standard Failed (-25 points)** - [View Checkstyle Report](https://github.com/baraksu-class-2026/maman02-roniG1951/actions/runs/21727920539)
 
 ## Tests
 
-[📊 View Test Reports](https://github.com/baraksu-class-2026/maman02-roniG1951/actions/runs/21646039885)
+[📊 View Test Reports](https://github.com/baraksu-class-2026/maman02-roniG1951/actions/runs/21727920539)
 
 ## AI Code Review
 
